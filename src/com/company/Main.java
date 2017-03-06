@@ -15,7 +15,8 @@ public class Main {
         createStructure(files.listFiles(), diskDirectory);
         diskDirectory.print(0);
     }
-    public static void createStructure(File[] files, DiskDirectory diskDirectory) {
+
+    static void createStructure(File[] files, DiskDirectory diskDirectory) {
         DiskElement diskElement;
         for (File file : files) {
             if (file.isDirectory()) {
@@ -28,4 +29,5 @@ public class Main {
             diskDirectory.add(diskElement);
         }
     }
+
 }

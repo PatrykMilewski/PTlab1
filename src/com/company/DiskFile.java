@@ -3,7 +3,7 @@ package com.company;
 import java.io.File;
 
 public class DiskFile extends DiskElement {
-    public DiskFile(File file) {
+    DiskFile(File file) {
         super(file);
         isDirectory = false;
         isFile = true;
@@ -17,4 +17,5 @@ public class DiskFile extends DiskElement {
         finalPrint += name + '\t' + "K " + formattedDate;
         System.out.println(finalPrint);
     }
+
 }

@@ -5,7 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public abstract class DiskElement implements Comparable<DiskElement> {
-    public DiskElement(File file) {
+    DiskElement(File file) {
         this.file = file;
         name = file.getName();
         long temp = file.lastModified();
@@ -14,7 +14,7 @@ public abstract class DiskElement implements Comparable<DiskElement> {
         sort = false;
     }
 
-    public DiskElement(File file, boolean sort) {
+    DiskElement(File file, boolean sort) {
         this.file = file;
         name = file.getName();
         long temp = file.lastModified();
@@ -36,15 +36,14 @@ public abstract class DiskElement implements Comparable<DiskElement> {
             return elementCompare;
     }
 
-    public void print() { print(0); }
+    File file;
+    String name;
+    private Date lastModified;
+    private SimpleDateFormat template = new SimpleDateFormat("yyyy-MM-dd");
+    String formattedDate;
+    boolean isDirectory;
+    boolean isFile;
+    boolean sort;
 
-    protected File file;
-    protected String name;
-    protected Date lastModified;
-    protected SimpleDateFormat template = new SimpleDateFormat("yyyy-MM-dd");
-    protected String formattedDate;
-    protected boolean isDirectory;
-    protected boolean isFile;
-    protected boolean sort;
 
 }

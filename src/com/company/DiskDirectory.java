@@ -6,11 +6,11 @@ import java.util.Set;
 import java.util.TreeSet;
 
 public class DiskDirectory extends DiskElement {
-    public DiskDirectory(File file, boolean sort) {
+    DiskDirectory(File file, boolean sort) {
         super(file, sort);
         isDirectory = true;
         isFile = false;
-        if (sort)
+        if (this.sort)
             children = new TreeSet<>((object1, object2) -> (int) (object1.file.getName().compareToIgnoreCase(object2.file.getName())));
         else
             children = new HashSet<>();
@@ -27,9 +27,10 @@ public class DiskDirectory extends DiskElement {
         }
     }
 
-    public void add(DiskElement element) {
+    void add(DiskElement element) {
         children.add(element);
     }
 
     private Set<DiskElement> children;
+
 }

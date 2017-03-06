@@ -4,7 +4,7 @@ import java.io.File;
 import java.util.Scanner;
 
 public class Main {
-    private static boolean sort = false;
+    private static boolean sort = true;
     public static void main(String[] args) {
         Scanner scanIn = new Scanner(System.in);
         String pathToScan = scanIn.nextLine();

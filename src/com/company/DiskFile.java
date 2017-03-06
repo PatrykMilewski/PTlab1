@@ -8,16 +8,13 @@ public class DiskFile extends DiskElement {
         isDirectory = false;
         isFile = true;
     }
+
     protected void print(int depth) {
-        for (int i =0 ;i < depth; i++) {
-            System.out.println("-");
+        String finalPrint = "";
+        for (int i = 0; i < depth; i++) {
+            finalPrint += '-';
         }
-        System.out.println(name);
-        System.out.println("\t");
-        System.out.println("P ");
-        System.out.println(formattedDate);
-        System.out.println("\n");
+        finalPrint += name + '\t' + "K " + formattedDate;
+        System.out.println(finalPrint);
     }
-
-
 }

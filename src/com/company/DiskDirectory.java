@@ -1,19 +1,19 @@
 package com.company;
 
 import java.io.File;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
 public class DiskDirectory extends DiskElement {
     DiskDirectory(File file, boolean sort) {
         super(file, sort);
         isDirectory = true;
         isFile = false;
-        if (this.sort)
-            children = new TreeSet<>((object1, object2) -> (int) (object1.file.getName().compareToIgnoreCase(object2.file.getName())));
-        else
+        if (this.sort) {
+            children = new TreeSet<>(new DataComparator());
+            //children = new TreeSet<>((object1, object2) -> (int) (object1.file.getName().compareToIgnoreCase(object2.file.getName())));
+        } else {
             children = new HashSet<>();
+        }
     }
     protected void print(int depth) {
         String finalPrint = "";
@@ -32,5 +32,5 @@ public class DiskDirectory extends DiskElement {
     }
 
     private Set<DiskElement> children;
-
+    //private Set<DiskElement> children;
 }

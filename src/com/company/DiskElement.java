@@ -4,7 +4,7 @@ import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public abstract class DiskElement implements Comparable<DiskElement> {
+public abstract class DiskElement {
     DiskElement(File file) {
         this.file = file;
         name = file.getName();
@@ -25,16 +25,16 @@ public abstract class DiskElement implements Comparable<DiskElement> {
 
     protected abstract void print(int depth);
 
-    @Override
-    public int compareTo(DiskElement element) {
-        int elementCompare = name.compareTo(element.name);
-
-        if (elementCompare == 0)
-            return formattedDate.compareTo(element.formattedDate);
-
-        else
-            return elementCompare;
-    }
+//    @Override
+//    public int compareTo(DiskElement element) {
+//        int elementCompare = name.compareTo(element.name);
+//
+//        if (elementCompare == 0)
+//            return formattedDate.compareTo(element.formattedDate);
+//
+//        else
+//            return elementCompare;
+//    }
 
     File file;
     String name;
